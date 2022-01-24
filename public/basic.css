@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
+
+body {
+    font-family: "Inter";
+    font-weight: 300;
+    padding: 10px 55px;
+    font-size: 10pt;
+}
+
+
+.pdf-button {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 30px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 170px;
+  will-change: transform;
+}
+
+.pdf-button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.pdf-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+
+.content {
+    max-width: 770px;
+    margin: auto;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 3.5em;
+    color: purple;
+}
+
+h3 {
+   font-size: 1.05em; 
+}
+
+.subheader {
+    font-size: 0.8em;
+    color: lightgray;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 15px;
+    min-height: 100%;
+    min-width: 25%;
+    position: relative;
+    float: left;
+}
+
+.experience, .education, .skills {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+/* INTRO */
+
+.intro {
+    margin: 30px 0 50px 0;
+}
+
+#name {
+    margin-bottom: 10px;
+}
+
+#job-title {
+    font-size: 1.3em;
+    color: gray;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.personal-info {
+    display: flex;
+    margin: 0;
+    color: gray;
+    margin-top: 0;
+    font-size: 0.9em;
+}
+
+.personal-info > p {
+    padding-right: 30px;
+}
+
+#statement {
+    color: gray;
+    font-size: 1em;
+    margin-top: 0px;
+}
+
+
+/* EDUCATION & EXPERIENCE */
+
+.experience-item {
+    margin-bottom: 25px;
+}
+
+.dates {
+    color: gray;
+    font-size: 0.9em;
+    margin-top: -10px;
+}
+
+.company {
+    font-weight: 300;
+}
+
+.company::before {
+    content: " ";
+    margin-right: 5px;
+}
+
+.location {
+    color: gray;
+    font-size: 0.9em;
+    margin-top: -10px;
+}
+
+
+/* SKILLS */
+
+.skill-category {
+    display: flex;
+    margin-bottom: -15px;
+}
+
+.skill {
+    margin-top: 15px;
+}
+
+.skill::before {
+    content: ", ";
+}
+
+.skill:first-of-type::before {
+    content: " ";
+    margin-left: 10px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ intro[1][0] }}'s Resume | resume-from-gsheets</title>
+    <link href="{{ url_for('static',filename='basic.css') }}" type="text/css" rel="stylesheet">
+    <script async src="https://restpack.io/save-as-pdf.js"></script>
+</head>
+
+<body>
+    <a class="pdf-button" href="https://restpack.io/html2pdf/save-as-pdf" rel="nofollow" target="_blank">Save as Pdf</a>
+    <div class="content">
+
+        <!-- INTRO -->
+        <div class="intro">
+            <h1 id="name">{{ intro[1][0] }}</h1>
+            <h2 id="job-title">{{ intro[1][1] }}</h2>
+            <div class="personal-info">
+                <p id="location">{{ intro[1][2] }}</p>
+                <p id="email">{{ intro[1][3] }}</p>
+                <p id="phone">{{ intro[1][4] }}</p>
+                <p id="city">{{ intro[1][5] }}</p>
+            </div>
+            <p id="statement">{{ intro [1][6] }}</p>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="education">
+            <h2 class="subheader">Education</h2>
+            <div class="education-content">
+                {% for e in education[1:] %}
+                <div class="education-item">
+                    <h3 class="school">{{ e[0] }}, <span class="degree">{{ e[1] }}</span></h3>
+                    <p class="dates">{{ e[2] }}</p>
+                    {% if e[3] %}
+                    <ul class="notes">
+                        {% for note in e[3].split("¶ ") %}
+                        <li>{{ note }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="experience">
+            <h2 class="subheader">Experience</h2>
+            <div class="experience-content">
+                {% for e in experience[1:] %}
+                <div class="experience-item">
+                    <h3 class="title">{{ e[0] }}<span class="company">{{ e[1] }}</span></h3>
+                    <p class="dates">{{ e[2] }}</p>
+                    <p class="location">{{ e[3] }}</p>
+                    <ul class="notes">
+                        {% for note in e[4][1:].split("¶ ") %}
+                        <li>{{ note }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="skills">
+            <h2 class="subheader">Skills</h2>
+            <div class="skills-content">
+                {% for category in get_categories(skills) %}
+                <div class="skill-category">
+                    <h3 class="category-name">{{ category }}</h3>
+                    {% for s in skills[1:] %}
+                    {% if s[1] == category %}
+                    <p class="skill">{{ s[0] }}</p>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
