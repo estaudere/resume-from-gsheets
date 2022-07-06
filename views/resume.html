@@ -5,6 +5,7 @@
     <title>{{ intro[1][0] }}'s Resume | resume-from-gsheets</title>
     <link href="{{ url_for('static',filename='basic.css') }}" type="text/css" rel="stylesheet">
     <script async src="https://restpack.io/save-as-pdf.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
 <body>
@@ -67,14 +68,10 @@
         <div class="skills">
             <h2 class="subheader">Skills</h2>
             <div class="skills-content">
-                {% for category in get_categories(skills) %}
+                {% for category, sk in get_skills_map(skills) %}
                 <div class="skill-category">
                     <h3 class="category-name">{{ category }}</h3>
-                    {% for s in skills[1:] %}
-                    {% if s[1] == category %}
-                    <p class="skill">{{ s[0] }}</p>
-                    {% endif %}
-                    {% endfor %}
+                    <p class="skill-list">{{ sk }}</p>
                 </div>
                 {% endfor %}
             </div>
