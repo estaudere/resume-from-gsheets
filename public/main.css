@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap");
+
+body {
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    padding: 50px 10%;
+    font-size: 10px;
+}
+
+h1 {
+    font-weight: bold;
+}
+

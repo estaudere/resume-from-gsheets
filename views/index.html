@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>resume-from-gsheets</title>
+    <link href="{{ url_for('static',filename='main.css') }}" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+</head>
+<body>
+    <h1>Create a resume from a Google sheet</h1>
+    <p>
+        First, create a properly styled Google sheet, then copy the URL of the sheet into 
+        the text box below (make sure your sheet is set to "Anyone with the link can 
+        view"). Click the button to preview it as a PDF. If you'd like to preview it
+        as a website, simply append the sheet ID to the end of the URL above. (You can 
+        test the app by clicking the "Get as PDF" button.)
+    </p>
+
+    <form action="{{ url_for('main') }}" method="post">
+        <label for="url">Sheet URL:</label>
+        <input type="text" id="url" name="lname" placeholder="https://docs.google.com/spreadsheets/d/1GBRTwNO_GSldGLUBWlBlUB9W-y3S8sE2x023My2vagw/edit">
+        <button type="submit">Get as PDF</button>
+    </form>
+</body>
+</html>
