@@ -13,11 +13,14 @@
 <body>
     <h1>Create a resume from a Google sheet</h1>
     <p>
-        First, create a properly styled Google sheet, then copy the URL of the sheet into 
-        the text box below (make sure your sheet is set to "Anyone with the link can 
-        view"). Click the button to preview it as a PDF. If you'd like to preview it
-        as a website, simply append the sheet ID to the end of the URL above. (You can 
-        test the app by clicking the "Get as PDF" button.)
+        First, create a properly styled Google sheet following 
+        <a target="_blank" rel="noreferrer nofollow" href="https://docs.google.com/spreadsheets/d/1GBRTwNO_GSldGLUBWlBlUB9W-y3S8sE2x023My2vagw/">
+            this template
+        </a>, then copy the URL of the sheet into the text box below (make sure your sheet
+        is set to "Anyone with the link can view"). Click the button to preview it as a 
+        PDF. If you'd like to preview it as a website, simply append the sheet ID to the 
+        end of the URL above. (You can test the app by clicking the "Get as PDF" button to
+        use the sample sheet.)
     </p>
 
     <form action="{{ url_for('main') }}" method="post">

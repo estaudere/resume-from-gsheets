@@ -6,9 +6,7 @@ from weasyprint.text.fonts import FontConfiguration
 
 # Support for gomix's 'front-end' and 'back-end' UI.
 app = Flask(__name__, static_folder='public', template_folder='views')
-KEY = "AIzaSyAbcwyz3Ba-7WRyTcIw_X_UBumxYQbhyWA"
-
-host = "http://127.0.0.1:5000/"
+KEY = os.getenv("G_KEY")
 
 @app.route('/', methods=['GET', 'POST'])
 def main():

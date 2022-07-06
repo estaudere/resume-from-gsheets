@@ -34,7 +34,7 @@
                     <p class="dates">{{ e[2] }}</p>
                     {% if e[3] %}
                     <ul class="notes">
-                        {% for note in e[3].split("¶ ") %}
+                        {% for note in e[3][1:].split("¶ ") %}
                         <li>{{ note }}</li>
                         {% endfor %}
                     </ul>
